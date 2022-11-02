@@ -1,0 +1,733 @@
+@font-face {
+    font-family: Michroma;
+    src: url('../fonts/Microma/Michroma-Regular.ttf');
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+/*Geral*/
+body, html {
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-size: 16px;
+    height: 100%;
+
+    overflow-x: hidden;
+}
+
+/*No título da página*/
+h1 {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.4em;
+    font-weight: 100;
+    letter-spacing: 1px;
+
+    text-shadow: 2px 3px 10px black;
+
+    padding: 10px;
+}
+
+/*No título de destaques*/
+h2 {
+    color: #404040;
+    font-size: 1.5em;
+    font-weight: 600;
+    display: inline-block;
+    border-bottom: 1px solid #404040;
+}
+
+/*No título dos artigos*/
+h3 {
+    display: block;
+}
+
+/*Título da lateral*/
+h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(204, 122, 0);
+}
+
+ul {
+    list-style: none;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: #404040;
+}
+
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+} 
+
+/*Container da página*/
+#container-principal {
+    background-color: rgb(255, 255, 255);
+}
+
+/*Efeito paralax no cabeçalho*/
+header#cabecalho-principal {
+    background: url(../img/capa-home.jpg);
+
+    /*Para ocupar espaçamento da tela*/
+    height: calc(100vh - 100px);
+
+    /*Tirando a repetição da imagem*/
+    background-repeat: no-repeat;
+    
+    /*Para cobrir áreas, quando a imagem for menor que a tela*/
+    background-size: cover;
+    
+    /*Centralizar a imagem*/
+    background-position: center;
+    
+    /*Para manter a imagem fixa e não rolar com a página*/
+    background-attachment: fixed;
+}
+
+/*Área topo do cabeçalho*/
+#topo-cabecalho {  
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+span.bem-vindo {
+    color: rgb(204, 122, 0);
+    font-size: 1.4em;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 10px black;
+
+    padding: 10px;
+}
+
+#area-busca {
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+input#busca {
+    width: 100%;
+    height: 40px;
+
+    border: none;
+    border-radius: 20px;
+
+    background: white url(../img/icon-lupa-2.png) no-repeat 96%;
+
+    font-size: 1.2em;
+
+    padding-left: 10px;
+    padding-right: 50px;
+}
+
+/*area do título no cabeçalho*/
+#titulo-cabecalho {
+    text-align: center;
+    margin-top: 100px;
+}   
+
+/*Título da notícia no cabeçalho*/
+.titulo {
+    display: block;
+    color: white;
+    font-size: 3em;
+    font-family: Michroma, Verdana;
+    text-shadow: 2px 2px 10px black;
+    letter-spacing: 1px;
+
+    margin-bottom: 20px;
+}
+
+/*Link para acessar noticia completa do cabeçalho*/
+a.ver-noticia {
+    color: rgba(58, 58, 58, 0.6);
+    text-transform: uppercase;
+    font-weight: bold;
+
+    background-color: rgb(204, 122, 0);
+    border-radius: 15px;
+    filter: opacity(0.9);
+
+    margin-top: 20px;
+    padding: 6px 10px;
+}
+
+a.ver-noticia:hover {
+    transition: all 0.6s ease-in-out;
+    background-color: rgb(115, 115, 115);
+    filter: opacity(1);
+}
+
+/*Barra de navegação*/
+#container-nav {
+    display: flex;
+    align-items: center;
+
+    position: sticky;
+    top: 0px;
+
+    font-size: 1.2em;
+    font-family: "Muli", Helvetica, Arial, sans-serif;
+    background-color: rgb(36, 36, 36);
+
+    z-index: 20;
+}
+
+/*Espaçamento logo na barra de navegação*/
+#nav-logo {
+    padding: 8px;
+}
+
+/*Tamanho do logotipo*/
+img.logo-nn {
+    width: 30px;
+}
+
+/*Tamanho de Nav*/
+nav#navbar {
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/*Menu de Links*/
+ul#menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+ul#menu li {
+    padding: 10px;
+}
+
+ul#menu li a {
+    letter-spacing: 1px;
+}
+
+/*Links do menu*/
+ul#menu li a:link, ul#menu li a:visited {
+    color: white;
+}
+
+ul#menu li a:hover {
+    color: rgb(204, 122, 0);
+}
+
+/*Container secundário de layout da página*/
+#container {
+    display: grid;
+    grid-template-columns: auto;
+
+    width: 95%;
+    margin: 30px auto;
+}
+
+/*Layout da seção destaques*/
+section#destaques {
+    display: grid;
+
+    margin-bottom: 30px;
+}
+
+/*Bloco de Destaques*/
+a.destaque {
+    /*Efeito de zoom*/
+    overflow: hidden;
+
+    /*Para fazer o posicinamento do titulo de destaque*/
+    position: relative;
+    
+    /*Para responsividade*/
+    width: 100%;
+
+    background-color: #9a9a9a;
+}
+
+/*Fazer imagem ocupar todo o espaçamento do bloco*/
+a.destaque img {
+    width: 100%;
+    transform: scale(1.1);
+
+    -webkit-filter: sepia(90%);
+    filter: brightness(90%);
+}
+
+.titulo-destaque {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px black;
+    letter-spacing: 0.5px;
+    
+    /*Posicionamento do texto*/
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+
+    padding: 18px;
+}
+
+.titulo-populares {
+    display: block;
+    border-bottom: 1px solid #dadada;
+
+    margin-bottom: 20px;
+}
+
+a.card-populares {
+    width: 100%;
+    display: flex;
+
+    background-color: #fff;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+
+    margin-bottom: 30px;
+}
+
+/*Artigos dentro do card*/
+a.card-populares article {
+    padding: 10px 20px;
+    background-color: white;
+    z-index: 4;
+}
+
+/*Tamanho da letra*/
+a.card-populares article p {
+    font-size: 0.9em;
+}
+
+/*Layout da lateral*/
+aside#ultimos {
+    background-color: white;
+    border: 5px solid rgb(204, 122, 0);
+    
+    padding: 15px 20px;
+    box-sizing: border-box;
+}
+
+/*Artigos dentro do lateral*/
+aside#ultimos article {
+    margin-top: 20px;
+    border-bottom: 1px solid #dadada;
+}
+
+/*Links da lateral*/
+aside#ultimos article a {
+    font-weight: 600;
+}
+
+aside#ultimos article a:hover {
+    text-decoration: underline;
+}
+
+/*Parágrafos da lateral*/
+aside#ultimos article p {
+    font-size: 0.8em;
+    margin-top: 10px;
+    margin-bottom: 35px;
+}
+
+/* 
+.botao {
+    margin: 20px;
+    border-left: 5px solid rgb(0, 132, 255);
+    background-color: rgba(0, 247, 255, 0.2);
+    padding: 20px;
+}
+*/
+
+/*Rodapé*/
+footer#rodape-principal {
+    color: white;
+    background-color: black;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+/*Aplicar botao Mobile*/
+@media (max-width: 767.98px) {
+    /*Botao mobile*/
+    #btn-mobile {
+        visibility: visible;
+
+        background: none;
+        border: none;
+
+        cursor: pointer;
+
+        z-index: 2000;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-left: auto;
+
+        border: 1px solid green;
+    }
+
+    .texto-btn-mobile {
+        margin: 0 10px;
+        color: white;
+        font-size: 1.1em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /*Ocultar container com menu*/
+    .container-menu {
+        visibility: hidden;
+
+        /*Ficar por cima dos elementos*/
+        position: absolute;
+        width: 100%;
+        height: 200px;
+
+        /*Afastar do cabeçalho*/
+        top: 45px;
+        left: 0px;
+    
+        z-index: 1000;
+    }
+    
+    /*Alterar container quando nav estiver ativa*/
+    #navbar.active .container-menu {
+        visibility: visible;
+        overflow-y: auto;
+
+        background-color: rgb(36, 36, 36);
+
+        /*Organizar elementos*/
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        justify-content: center;
+    }
+    
+    /*Alterar menu quando nav estiver ativa*/
+    #navbar.active ul#menu {
+        width: 80%;
+        display: block;
+        
+        order: 2;
+        padding: 0px;
+    }
+
+    /*Itens da lista quando nav ativa*/
+    #navbar.active ul#menu li {
+        text-align: left;
+
+        padding: 8px 0px;
+
+        border-bottom: 1px solid rgba(128, 128, 128, 0.6);
+    }
+
+    /*Ícone Hamburguer*/
+    #icon-hamburger {
+        /*Linha para hamburger*/
+        color: white;
+        border-top: 2px solid;
+        width: 17px;
+
+        display: block;
+    }
+
+    /*Pseudo elementos*/
+    #icon-hamburger::after, #icon-hamburger::before {
+        /*Para o conteudo existir*/
+        content: '';
+        
+        /*Linha para hamburger*/
+        display: block;
+        width: 17px;
+        margin-top: 3px;
+        height: 2px;
+
+        /*Asssume a cor do elemento hamburger*/
+        background: currentColor;
+
+        /*Para o traço ser posicionado mais acima*/
+        position: relative;
+    }
+
+    /*Tirar um dos traços*/
+    #navbar.active #icon-hamburger {
+        border-top-color: transparent;
+    }
+    
+    /*Rotacionar traço*/
+    #navbar.active #icon-hamburger::before {
+        transform: rotate(135deg);
+        transition: transform .6s ease-out;
+    }
+
+    /*Rotacionar traço*/
+    #navbar.active #icon-hamburger::after {
+        transform: rotate(-135deg);
+        
+        transition: transform .6s ease-out;
+
+        /*Posicionar mais acima*/
+        top: -5px;
+    }
+}
+
+/*Telas que tenham até 575.98px*/
+@media (max-width: 575.98px) {
+
+    /*Efeito paralax no cabeçalho*/
+    header#cabecalho-principal {
+        background: url(../img/capa-home-mobile.jpg);
+    }
+
+    /*Área topo do cabeçalho*/
+    #topo-cabecalho {  
+        justify-content: center;
+    }
+
+    /*Limitar redução da busca*/
+    section#topo-cabecalho #area-busca{
+        min-width: 300px;
+    }
+
+    /*Reduzir área de busca*/
+    #area-busca {
+        width: 350px;
+    }
+
+    /*Ocultar*/
+    span.bem-vindo, .esconder {
+        display: none;
+    }
+    
+    .titulo {
+        font-size: 2em;
+    }
+
+    #area-conteudo article.artigo a {
+        flex-wrap: wrap;
+    }
+
+    #area-conteudo article.artigo a img {
+        width: 100%;
+        height: 180px;
+    }
+
+    a.card-populares {
+        display: block;
+    }
+    
+    a.card-populares img {
+        width: 100%;
+    }
+}
+
+/* Telas que tenham de 576px até 767.98px*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+    /*Tirar espaçamento do header*/
+    header#cabecalho-principal {
+        padding-bottom: 50px;
+    }
+    
+    #topo-cabecalho {  
+        justify-content: space-evenly;
+    }
+
+    /*Ocultar texto bem vindo*/
+    span.bem-vindo {
+        display: none;
+    }
+
+    /*Layout da seção destaques*/
+    section#destaques {
+        grid-template-columns: auto auto;
+        justify-items: center;
+    }
+
+    a.card-populares {
+        display: block;
+    }
+    
+    a.card-populares img {
+        width: 100%;
+    }
+}
+
+/* Telas que tenham de 766px até 991.98px. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /*Área topo do cabeçalho*/
+    #topo-cabecalho {  
+        justify-content: space-between;
+    }
+
+    /*Botão Mobile*/
+    #btn-mobile {
+        display: none;
+    }
+
+    /*Layout da seção destaques*/
+    section#destaques {
+        grid-template-columns: auto auto;
+        justify-items: center;
+    }
+
+    /*Imagens dentro do card*/
+    a.card-populares img {
+        max-width: 200px;
+    }
+
+    /*Tamanho do texto do título*/
+    section#populares .titulo {
+        font-size: 0.7em;
+    }
+
+    /*Container para organizar artigos*/
+    .container-artigos {
+        display: grid;
+        grid-template-columns: 49% 49%;
+        gap: 0px 30px;
+        justify-content: center;
+    }
+}
+
+/* Telas que tenham de 992px até 1199.98px. */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    /*Área topo do cabeçalho*/
+    #topo-cabecalho {  
+        justify-content: space-between;
+    }
+    
+    /*Botão Mobile*/
+    #btn-mobile {
+        display: none;
+    }
+
+    /*Layout da seção destaques*/
+    section#destaques {
+        grid-template-columns: auto auto auto;
+        justify-items: center;
+        column-gap: 30px;
+        row-gap: 30px;
+    }
+
+    /*Bloco de Destaques*/
+    a.destaque {
+        border-radius: 3px;
+    }
+
+    /*Efeito de zoom e escurecer em imagens*/
+    a.destaque:hover img, a.card-populares:hover img {
+        transition: transform 0.5s;
+        transition-timing-function: ease-in-out; 
+        transform: scale(1.2);
+    
+        -webkit-filter: sepia(80%);
+        filter: brightness(80%);
+    }
+
+    /*Para o efeito de zoom*/
+    a.card-populares {
+        overflow: hidden;
+        margin-bottom: 30px;
+    }
+
+    /*Imagens dentro do card*/
+    a.card-populares img {
+        width: 30%;
+        max-width: 200px;
+        transform: scale(1.1);
+        z-index: 2;
+    }
+
+    /*Container para organizar artigos*/
+    .container-artigos {
+        display: grid;
+        grid-template-columns: 49% 49%;
+        gap: 0px 30px;
+        justify-content: center;
+    }
+}
+
+/*Telas que tenham de 1200px pra cima. */
+@media (min-width: 1200px) {
+    /* Área topo do cabeçalho */
+    #topo-cabecalho {  
+        justify-content: space-between;
+    }
+
+    /*Botão Mobile*/
+    #btn-mobile {
+        display: none;
+    }
+
+    /*Limitar container*/
+    #container {
+        max-width: 1124px;
+    }
+
+    /*Layout da seção destaques*/
+    section#destaques {
+        grid-template-columns: auto auto auto;
+        justify-items: center;
+        column-gap: 30px;
+        row-gap: 30px;
+    }
+
+    /*Bloco de Destaques*/
+    a.destaque {
+        border-radius: 3px;
+    }
+
+    /*Efeito de zoom e escurecer em imagens*/
+    a.destaque:hover img, a.card-populares:hover img {
+        transition: transform 0.5s;
+        transition-timing-function: ease-in-out; 
+        transform: scale(1.2);
+    
+        -webkit-filter: sepia(80%);
+        filter: brightness(80%);
+    }
+
+    /*Layout da seção populares*/
+    section#populares {
+        width: 65%;
+        float: left;
+        margin-right: 30px;
+    }
+
+    .titulo-populares {
+        font-size: 0.9em;
+    }
+
+    /*Para o efeito de zoom*/
+    a.card-populares {
+        overflow: hidden;
+        margin-bottom: 30px;
+    }
+
+    /*Imagens dentro do card*/
+    a.card-populares img {
+        width: 30%;
+        max-width: 200px;
+        transform: scale(1.1);
+        z-index: 2;
+    }
+
+    /*Layout de ultimos*/
+    aside#ultimos {
+        width: calc(35% - 30px);
+        float: right;
+    }
+
+}
