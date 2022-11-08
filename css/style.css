@@ -17,8 +17,12 @@ body, html {
     overflow-x: hidden;
 }
 
+body#pagina-noticia {
+    background-color: #eee;
+}
+
 /*No título da página*/
-h1 {
+body#home h1 {
     color: rgba(255, 255, 255, 0.8);
     font-size: 1.4em;
     font-weight: 100;
@@ -27,6 +31,14 @@ h1 {
     text-shadow: 2px 3px 10px black;
 
     padding: 10px;
+}
+
+/*No título da notícia*/
+body#pagina-noticia h1 {
+    color: #404040;
+    font-size: 1.6em;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 /*No título de destaques*/
@@ -305,8 +317,16 @@ a.card-populares article p {
     font-size: 0.9em;
 }
 
+/*Layout dos artigos de noticias*/
+article#noticia {
+    background-color: white;
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.4);
+
+    padding: 20px;
+}
+
 /*Layout da lateral*/
-aside#ultimos {
+#ultimos {
     background-color: white;
     border: 5px solid rgb(204, 122, 0);
     
@@ -315,35 +335,26 @@ aside#ultimos {
 }
 
 /*Artigos dentro do lateral*/
-aside#ultimos article {
+#ultimos article {
     margin-top: 20px;
     border-bottom: 1px solid #dadada;
 }
 
 /*Links da lateral*/
-aside#ultimos article a {
+#ultimos article a {
     font-weight: 600;
 }
 
-aside#ultimos article a:hover {
+#ultimos article a:hover {
     text-decoration: underline;
 }
 
 /*Parágrafos da lateral*/
-aside#ultimos article p {
+#ultimos article p {
     font-size: 0.8em;
     margin-top: 10px;
     margin-bottom: 35px;
 }
-
-/* 
-.botao {
-    margin: 20px;
-    border-left: 5px solid rgb(0, 132, 255);
-    background-color: rgba(0, 247, 255, 0.2);
-    padding: 20px;
-}
-*/
 
 /*Rodapé*/
 footer#rodape-principal {
@@ -699,8 +710,13 @@ footer#rodape-principal {
         filter: brightness(80%);
     }
 
+    body#pagina-noticia #container {
+        grid-template-columns: 65% 35%;
+        gap: 30px;
+    }
+
     /*Layout da seção populares*/
-    section#populares {
+    body#home section#populares {
         width: 65%;
         float: left;
         margin-right: 30px;
@@ -723,9 +739,9 @@ footer#rodape-principal {
         transform: scale(1.1);
         z-index: 2;
     }
-
-    /*Layout de ultimos*/
-    aside#ultimos {
+    
+    /*Layout da area lateral*/
+    body#home aside {
         width: calc(35% - 30px);
         float: right;
     }
